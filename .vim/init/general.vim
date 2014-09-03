@@ -20,7 +20,7 @@
 " Visual Cues
   syntax on                                          " turn on syntax highligtning
   set background=dark                                "
-  silent! colorscheme solarized                      " colorscheme
+  silent! colorscheme molokai                      " colorscheme
 
   set showmatch                                      " show matching brackets
   set hlsearch                                       " highlight searched for phrases

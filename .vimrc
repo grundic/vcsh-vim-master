@@ -12,6 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Custom bundles
 Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'tomasr/molokai.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround.git'
