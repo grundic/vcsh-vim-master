@@ -124,4 +124,4 @@
 
 " Set filetypes for unusual files
   au BufNewFile,BufRead *.ejs set filetype=html
-  au BufNewFile,BufRead {Capfile,Gemfile,Rakefile,config.ru,.irbrc} set ft=ruby
+  au BufNewFile,BufRead {Capfile,Gemfile,Rakefile,config.ru,.irbrc,*.pp} set ft=ruby
