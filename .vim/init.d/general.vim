@@ -1,4 +1,5 @@
 " GUI Options
+  set nocompatible                " be iMproved
   set guifont=Inconsolata:h24
   set guioptions-=T               " Remove GUI toolbar
   set guioptions-=e               " Use text tab bar, not GUI
@@ -12,6 +13,7 @@
   set ffs=unix,mac               " support these in this order
   filetype on                    " detect the type of file
   filetype plugin on             " load filetype plugins
+  filetype plugin indent on      " turns on "detection", "plugin" and "indent" at once.
   set viminfo+=!                 " make sure it can save viminfo
 
   set list                       " Show whitespace

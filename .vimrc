@@ -1,25 +1,19 @@
 " .vimrc configuration
 
-set nocompatible              " be iMproved
-filetype off                  " required!
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -sfLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required! 
-Plugin 'gmarik/Vundle.vim'
-
-" Custom bundles
-Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'tomasr/molokai.git'
-Plugin 'tpope/vim-fugitive.git'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-surround.git'
-Plugin 'klen/python-mode.git'
-
-
-filetype plugin indent on
+call plug#begin('~/.vim/bundle')
+Plug 'altercation/vim-colors-solarized'
+Plug 'tomasr/molokai'
+Plug 'tpope/vim-fugitive'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'klen/python-mode'
+call plug#end()
 
 " source initialization files
-runtime! init/**.vim
+runtime! init.d/**.vim
