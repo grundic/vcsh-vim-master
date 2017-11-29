@@ -8,11 +8,23 @@ endif
 
 call plug#begin('~/.vim/bundle')
 Plug 'altercation/vim-colors-solarized'
+Plug 'fatih/vim-go'
+Plug 'henrik/vim-indexed-search'
+Plug 'jiangmiao/auto-pairs'
+Plug 'kien/ctrlp.vim'
+Plug 'mhinz/vim-signify'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'python-mode/python-mode'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'scrooloose/nerdtree'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-fugitive'
-Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-surround'
-Plug 'klen/python-mode'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-syntastic/syntastic'
+
 call plug#end()
 
 " source initialization files

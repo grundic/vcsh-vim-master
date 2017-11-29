@@ -18,6 +18,9 @@
 
   set list                       " Show whitespace
   set listchars=trail:·
+  set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
+
+  let mapleader=","
 
 " Visual Cues
   syntax on                                          " turn on syntax highligtning
@@ -32,7 +35,7 @@
   set novisualbell                                   " don't blink
   set noerrorbells                                   " no noises
 
-  set statusline=[%n]                             " buffer number
+  set statusline=[%n\|%{winnr()}]                 " buffer number & window index
   set statusline+=\ %<%.99f                       " tail of the filename
   set statusline+=\ %m                            " modified flag
   set statusline+=[
@@ -127,3 +130,19 @@
 " Set filetypes for unusual files
   au BufNewFile,BufRead *.ejs set filetype=html
   au BufNewFile,BufRead {Capfile,Gemfile,Rakefile,config.ru,.irbrc,*.pp} set ft=ruby
+" make background transparent. This must be after syntax and filetype!
+  hi Normal guibg=NONE ctermbg=NONE
+
+" Remove search highlighting
+  map <silent> <Leader>l :noh<CR>
+
+" Configure paste toggling
+  nnoremap <F2> :set invpaste paste?<CR>
+  set pastetoggle=<F2>
+  set showmode
+
+" Window resizing using arrows
+nnoremap <left>   <c-w>>
+nnoremap <right>  <c-w><
+nnoremap <up>     <c-w>+
+nnoremap <down>   <c-w>-
