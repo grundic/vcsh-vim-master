@@ -1,4 +1,5 @@
 " GUI Options
+  set encoding=utf-8
   set nocompatible                " be iMproved
   set guifont=Inconsolata:h24
   set guioptions-=T               " Remove GUI toolbar
