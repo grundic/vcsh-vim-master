@@ -24,6 +24,7 @@ Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-syntastic/syntastic'
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 
