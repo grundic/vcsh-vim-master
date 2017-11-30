@@ -1,6 +1,6 @@
 *
 !/.gitignore.d
-!/.gitignore.d/vim
+!/.gitignore.d/vim-master
 !/.vim
 !/.vim/.gitignore
 !/.vim/init.d
