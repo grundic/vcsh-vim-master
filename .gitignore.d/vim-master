@@ -5,6 +5,7 @@
 !/.vim/.gitignore
 !/.vim/init.d
 !/.vim/init.d/_main_.vim
+!/.vim/init.d/aabr.vim
 !/.vim/init.d/ctrlp.vim
 !/.vim/init.d/nerdtree.vim
 !/.vim/init.d/syntastic.vim
