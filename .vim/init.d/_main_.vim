@@ -16,6 +16,7 @@
   filetype plugin on             " load filetype plugins
   filetype plugin indent on      " turns on "detection", "plugin" and "indent" at once.
   set viminfo+=!                 " make sure it can save viminfo
+  set wic                        " case-insensitive filename completion
 
   set list                       " Show whitespace
   set listchars=trail:·
