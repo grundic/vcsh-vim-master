@@ -135,16 +135,20 @@
 " make background transparent. This must be after syntax and filetype!
   hi Normal guibg=NONE ctermbg=NONE
 
-" Remove search highlighting
+" Key mappings
+  " Avoid the escape key
+  :imap kj <Esc>
+
+  " Remove search highlighting
   map <silent> <Leader>l :noh<CR>
 
-" Configure paste toggling
+  " Configure paste toggling
   nnoremap <F2> :set invpaste paste?<CR>
   set pastetoggle=<F2>
   set showmode
 
-" Window resizing using arrows
-nnoremap <left>   <c-w>>
-nnoremap <right>  <c-w><
-nnoremap <up>     <c-w>+
-nnoremap <down>   <c-w>-
+  " Window resizing using arrows
+  nnoremap <left>   <c-w>>
+  nnoremap <right>  <c-w><
+  nnoremap <up>     <c-w>+
+  nnoremap <down>   <c-w>-
