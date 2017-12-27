@@ -97,7 +97,7 @@
   set lsp=0                            " space it out a little more (easier to read)
   set ruler                            " Always show current positions along the bottom
   set cmdheight=2                      " the command bar is 2 high
-  set number                           " turn on line numbers
+  set number relativenumber        " turn on line hybrid numbers
   set numberwidth=3
   set cpoptions+=n                     " show wrapped lines in the line number gutter
                                        " Hitting ctrl-n ctrl-n whill toggle the display of numbers
@@ -152,3 +152,10 @@
   nnoremap <right>  <c-w><
   nnoremap <up>     <c-w>+
   nnoremap <down>   <c-w>-
+
+  " Turn of relative numbers for inactive window and insert mode
+  :augroup numbertoggle
+  :  autocmd!
+  :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+  :augroup END
