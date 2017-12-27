@@ -8,10 +8,12 @@ endif
 
 call plug#begin('~/.vim/bundle')
 Plug 'altercation/vim-colors-solarized'
+Plug 'easymotion/vim-easymotion'
 Plug 'fatih/vim-go'
 Plug 'henrik/vim-indexed-search'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kien/ctrlp.vim'
+Plug 'majutsushi/tagbar'
 Plug 'mhinz/vim-signify'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
@@ -24,7 +26,6 @@ Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-syntastic/syntastic'
-Plug 'majutsushi/tagbar'
 
 call plug#end()
 
