@@ -130,9 +130,6 @@
 " Use shell in vim (sources rvm)
   set shell=/bin/sh
 
-" Set filetypes for unusual files
-  au BufNewFile,BufRead *.ejs set filetype=html
-  au BufNewFile,BufRead {Capfile,Gemfile,Rakefile,config.ru,.irbrc,*.pp} set ft=ruby
 " make background transparent. This must be after syntax and filetype!
   hi Normal guibg=NONE ctermbg=NONE
 
