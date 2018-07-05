@@ -5,7 +5,8 @@
 !/.vim/.gitignore
 !/.vim/init.d
 !/.vim/init.d/_main_.vim
-!/.vim/init.d/ale.vim
 !/.vim/init.d/aabr.vim
+!/.vim/init.d/ale.vim
+!/.vim/init.d/explore.vim
 !/.vim/init.d/syntastic.vim
 !/.vimrc
