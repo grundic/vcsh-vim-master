@@ -30,6 +30,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'dylon/vim-antlr'
 
 call plug#end()
 
