@@ -19,13 +19,15 @@
   set wic                        " case-insensitive filename completion
 
   set list                       " Show whitespace
-  set listchars=trail:·
-  set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
+  set showbreak=↪\
+  set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 
   let mapleader=","
 
 " Visual Cues
   syntax on                                          " turn on syntax highligtning
+  let g:gruvbox_contrast_dark = "soft"
+  set t_Co=256
   set background=dark                               "
   silent! colorscheme gruvbox                        " colorscheme
 
@@ -105,6 +107,7 @@
   set hid                              " you can change buffer without saving
   set whichwrap+=<,>,h,l               " backspace and cursor keys wrap to
   "set mouse=a                          " use mouse everywhere
+  set mouse=nicr                       " set mouse scrolling only
   set shortmess=atI                    " shortens messages to avoid 'press a key' prompt
   set report=0                         " tell us when anything is changed via :...
                                        " make the splitters between windows be blank
@@ -130,8 +133,8 @@
 " Use shell in vim (sources rvm)
   set shell=/bin/sh
 
-" make background transparent. This must be after syntax and filetype!
-  hi Normal guibg=NONE ctermbg=NONE
+  " make background transparent. This must be after syntax and filetype!
+  "hi Normal guibg=NONE ctermbg=NONE
 
 " Key mappings
   " Avoid the escape key
@@ -151,6 +154,12 @@
   nnoremap <up>     <c-w>+
   nnoremap <down>   <c-w>-
 
+  "Better window navigation
+  nnoremap <C-j> <C-w>j
+  nnoremap <C-k> <C-w>k
+  nnoremap <C-h> <C-w>h
+  nnoremap <C-l> <C-w>l
+
   " Turn of relative numbers for inactive window and insert mode
   :augroup numbertoggle
   :  autocmd!
@@ -169,3 +178,15 @@ vnoremap <silent> # :<C-U>
   \gvy?<C-R><C-R>=substitute(
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
+
+  " Highlight trailing spaces
+  highlight ExtraWhitespace ctermbg=red guibg=red
+  match ExtraWhitespace /\s\+$/
+  autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+  autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+  autocmd BufWinLeave * call clearmatches()
+
+
+au BufRead,BufNewFile *.g set filetype=antlr3
+au BufRead,BufNewFile *.g4 set filetype=antlr4
