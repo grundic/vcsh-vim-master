@@ -160,6 +160,10 @@
   nnoremap <C-h> <C-w>h
   nnoremap <C-l> <C-w>l
 
+  " Move tabs left/right
+  noremap t> :tabmove+<cr>
+  noremap t< :tabmove-<cr>
+
   " Turn of relative numbers for inactive window and insert mode
   :augroup numbertoggle
   :  autocmd!
