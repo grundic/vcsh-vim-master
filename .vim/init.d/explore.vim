@@ -20,4 +20,4 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 
 " Set the width of the directory explorer
-let g:netrw_winsize = 25
+let g:netrw_winsize = 15
