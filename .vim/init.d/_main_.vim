@@ -26,9 +26,10 @@
 
 " Visual Cues
   syntax on                                          " turn on syntax highligtning
+  let g:gruvbox_guisp_fallback = "bg"                " https://github.com/morhetz/gruvbox/issues/175
   let g:gruvbox_contrast_dark = "soft"
   set t_Co=256
-  set background=dark                               "
+  set background=dark                                "
   silent! colorscheme gruvbox                        " colorscheme
 
   set showmatch                                      " show matching brackets
@@ -194,3 +195,35 @@ vnoremap <silent> # :<C-U>
 
 au BufRead,BufNewFile *.g set filetype=antlr3
 au BufRead,BufNewFile *.g4 set filetype=antlr4
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+" Remember info about open buffers on close
+set viminfo^=%
+
+" Enable spelling by default
+if has("spell")
+  " turn spelling on by default
+  set spell
+
+  " toggle spelling with F4 key
+  map <F5> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR>
+
+  " they were using white on white
+  highlight PmenuSel ctermfg=black ctermbg=lightgray
+
+  " limit it to just the top 10 items
+  set sps=best,10
+endif
+
+function! FzfSpellSink(word)
+  exe 'normal! "_ciw'.a:word
+endfunction
+function! FzfSpell()
+  let suggestions = spellsuggest(expand("<cword>"))
+  return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
+endfunction
+nnoremap z= :call FzfSpell()<CR>

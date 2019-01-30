@@ -33,6 +33,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'dylon/vim-antlr'
 Plug 'justinmk/vim-dirvish'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'skywind3000/asyncrun.vim'
 
 call plug#end()
 
