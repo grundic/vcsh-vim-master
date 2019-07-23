@@ -207,7 +207,7 @@ set viminfo^=%
 " Enable spelling by default
 if has("spell")
   " turn spelling on by default
-  set spell
+  set nospell
 
   " toggle spelling with F4 key
   map <F5> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR>
