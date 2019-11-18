@@ -86,6 +86,7 @@
   set wildmode=full                 " zsh style command mode completion
   set autoread                      " No prompt for file changes outside Vim
   set swapfile                      " Keep swapfiles
+  set undofile                      " Maintain undo history between sessions
   set wildignore+=tags              " Ignore tags when globbing.
   set wildignore+=tmp/**            " ...Also tmp files.
   set wildignore+=public/uploads/** " ...Also uploads.
@@ -95,6 +96,7 @@
   set wildignore+=.git,*.o,tmp/**,vendor/rails/**
   set directory=~/.vim-tmp,~/tmp,/var/tmp,/tmp
   set backupdir=~/.vim-tmp,~/tmp,/var/tmp,/tmp
+  set undodir=~/.vim/undodir
 
 " Vim UI
   set lsp=0                            " space it out a little more (easier to read)
